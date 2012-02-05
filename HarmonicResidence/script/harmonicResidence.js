@@ -1,4 +1,4 @@
-// test
+// test by shiho
 var sp = getSpotifyApi(1);
 var models = sp.require('sp://import/scripts/api/models');
 var player = models.player;
