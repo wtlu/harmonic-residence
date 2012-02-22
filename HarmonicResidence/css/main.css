@@ -3,3 +3,25 @@ h1 {
 	font-size: 24px;
 	padding: 20px;
 }
+
+/* Home page // Sign-in Form
+-------------------------------*/
+form {
+	width: 400px;
+	margin: auto;
+}
+
+legend {
+	margin: 15px 0;
+}
+
+form p, dd, dt {
+	margin: 5px 0;
+}
+
+dt {
+	float: left;
+	width: 100px;
+	margin-right: 10px;
+}
+
