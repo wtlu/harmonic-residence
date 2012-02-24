@@ -28,6 +28,8 @@
         }
     ],
 	"RequiredPermissions": [
-		"http://ws.audioscrobbler.com"
+		"http://ws.audioscrobbler.com",
+		"http://*.facebook.com",
+		"https://*.facebook.com"
 	]
 }
