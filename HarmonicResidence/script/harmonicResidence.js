@@ -29,7 +29,7 @@ function facebookAuth() {
 			onFailure : function(error) {
 				console.log("Authentication failed with error: " + error);
 			},
-			onComplete : hideLoginButton
+			onComplete : function() { }
 		});
 	}
 
@@ -40,6 +40,7 @@ function initHR(fb_token, ttl) {
 	fb_access_token = fb_token;
 	console.log(ttl);
 	console.log('Success! Here is the access token:' + fb_access_token);
+	hideLoginButton(); //Now hide the login button since we have a valid token
 	url = fb_listen_url + '?access_token=' + fb_access_token;
 	console.log(url);
 	$.getJSON(url, function(data) {
