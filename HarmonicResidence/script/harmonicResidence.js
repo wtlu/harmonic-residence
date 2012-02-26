@@ -3,7 +3,7 @@
  *		
  */
 
- // Initialize the Spotify objects
+// Initialize the Spotify objects
 var sp = getSpotifyApi(1),
 	auth = sp.require('sp://import/scripts/api/auth'), //For Facebook integration
 	models = sp.require("sp://import/scripts/api/models"),
@@ -20,7 +20,7 @@ var fb_listen_url = 'https://graph.facebook.com/me/music.listens';
 var fb_music_playlist_url = 'https://graph.facebook.com/me/music.playlists';
 var fb_access_token = '';
 
-//Allows for authentication with Facebook
+//Post: Allows for authentication with Facebook
 //Note that if user is already logged in, then app will not ask user to sign in again
 function facebookAuth() {
 	if(fb_access_token === '' || fb_access_token === null) {
@@ -35,6 +35,7 @@ function facebookAuth() {
 
 }
 
+//Post: Initializes Harmonic Residence after user is logged in
 function initHR(fb_token, ttl) {
 	fb_access_token = fb_token;
 	console.log(ttl);
@@ -97,7 +98,7 @@ function handleLinks() {
 	} 
 }
 
-//Binds the login and logout buttons to logging in and logging out 
+//Post: Binds the login and logout buttons to logging in and logging out 
 function bindLoginButtons() {
 	var loginButton = $("#fb-login-button");
 			
@@ -108,21 +109,22 @@ function bindLoginButtons() {
 	$("#fb-logout-button").hide();
 }
 
-//Hides the login button
+//Post: Hides the login button
 function hideLoginButton() {
 	$("#fb-login-button").hide();
 	$("#fb-logout-button").show();
 }
 
-//Shows the login button
+//Post: Shows the login button
 function showLoginButton() {
 	$("#fb-login-button").show();
 	$("#fb-logout-button").hide();
 }
 
-//Logs the user out of Facebook
+//Pre: User is currently logged in with a token
+//Post: Logs the user out of Facebook
 function userFacebookLogout() {
-	//var homeUrl = 'sp://harmonicresidence/index.html';
+	//Init query paramerters
 	var homeUrl = 'http://www.facebook.com/connect/login_success.html';
 	var logoutUrl = 'https://www.facebook.com/logout.php?';
 	var queryParams = [
@@ -131,20 +133,12 @@ function userFacebookLogout() {
 		];
 	
 	var query = queryParams.join('&');	
-	//Need to find a better way to logout than opening a window
-	auth.showAuthenticationDialog(logoutUrl + query, homeUrl, {  
-					
-		onSuccess : function(response) {
-			console.log('we logged out');
-			fb_access_token = '';
-			showLoginButton();
-		},
-
-		onFailure : function (error) {
-			console.log('failed to log out');
-		},
-
-		onComplete : function () {	}
+	
+	//Now log out of Facebook
+	$.get(logoutUrl + query, function(data) {
+		console.log('we logged out');
+		fb_access_token = '';
+		showLoginButton();
 	});
 
 }
