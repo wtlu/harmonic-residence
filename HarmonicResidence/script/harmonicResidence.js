@@ -54,6 +54,7 @@ function initHR(fb_token, ttl) {
 						console.log(trackname);
 					}
 				});
+	getCurrentUserInfo(fb_token);			
 }
 
 // Handle URI arguments
