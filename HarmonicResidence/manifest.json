@@ -1,0 +1,35 @@
+{
+	"BundleType": "Application",
+	"AppIcon": {
+		"36x18": "harmonicResidence.png"
+	},
+	"AppName": {
+		"en": "HarmonicResidence"
+	},
+	"SupportedLanguages": [
+		"en"
+	],
+	"DefaultTabs": [
+        {
+            "arguments": "home",
+            "title": { "en": "Home" }    
+        },
+        {
+            "arguments": "session",
+            "title": { "en": "Session" }    
+        },
+        {
+            "arguments": "settings",
+            "title": { "en": "Settings" }    
+        },
+        {
+            "arguments": "help",
+            "title": { "en": "Help" }    
+        }
+    ],
+	"RequiredPermissions": [
+		"http://ws.audioscrobbler.com",
+		"http://*.facebook.com",
+		"https://*.facebook.com"
+	]
+}
