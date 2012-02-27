@@ -16,8 +16,6 @@ var sp = getSpotifyApi(1),
 	
 var permissions = ['user_about_me', 'user_actions.music'];
 var app_id = '174774552634402';
-var fb_listen_url = 'https://graph.facebook.com/me/music.listens';
-var fb_music_playlist_url = 'https://graph.facebook.com/me/music.playlists';
 var fb_access_token = '';
 
 //Post: Allows for authentication with Facebook
@@ -41,20 +39,12 @@ function initHR(fb_token, ttl) {
 	console.log(ttl);
 	console.log('Success! Here is the access token:' + fb_access_token);
 	hideLoginButton(); //Now hide the login button since we have a valid token
-	url = fb_listen_url + '?access_token=' + fb_access_token;
-	console.log(url);
-	$.getJSON(url, function(data) {
-					var listens = data.data;
-					console.log('we are here');
-					console.log(data);
-					for(var i=0;i<listens.length;i++) {
-						var tracklink = listens[i].data.song.url;
-						var trackname = listens[i].data.song.title;
-						//$('#listens').append('<li><a href="' + tracklink + '">' + trackname + '</a></li>');
-						console.log(trackname);
-					}
-				});
-	getCurrentUserInfo(fb_token);			
+	
+	getCurrentUserInfo(fb_token);
+	getUserFacebookListeningHistory(fb_token);	
+	
+	var currentUserTracks = getUserSpotifyLibrary();
+	console.log(currentUserTracks);
 }
 
 // Handle URI arguments
@@ -149,17 +139,7 @@ $(function(){
 	
 	console.log('Loaded.');
 	bindLoginButtons();
-	if(fb_access_token === '' || fb_access_token === null) {
-		//facebookAuth();
-		console.log('We are done with auth and the token is below');
-		console.log(fb_access_token);
-		var fb_listen_request = fb_listen_url + '?access_token=' + fb_access_token;
-		var fb_playlist_request = fb_music_playlist_url + '?access_token=' + fb_access_token;
-		console.log('the url to access the listening history is below');
-		console.log(fb_listen_request);
-		console.log('the url to access the playlist is below');
-		console.log(fb_playlist_request);
-	}
+
 	// Run on application load
 	handleArgs();
 	handleLinks();
