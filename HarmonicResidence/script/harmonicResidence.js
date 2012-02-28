@@ -21,6 +21,8 @@ var fb_access_token = '';
 //Post: Allows for authentication with Facebook
 //Note that if user is already logged in, then app will not ask user to sign in again
 function facebookAuth() {
+	$("#login-page").hide(); // Hides login info 
+
 	if(fb_access_token === '' || fb_access_token === null) {
 		auth.authenticateWithFacebook(app_id, permissions, {
 			onSuccess : initHR,
@@ -30,7 +32,9 @@ function facebookAuth() {
 			onComplete : function() { }
 		});
 	}
-
+	// Show tab content
+	var args = models.application.arguments;
+	$("#"+args[0]).show();
 }
 
 //Post: Initializes Harmonic Residence after user is logged in
@@ -54,8 +58,13 @@ function handleArgs() {
 	var args = models.application.arguments;
 	console.log('the args are: ' + args);
 	$(".section").hide();	// Hide all sections
-	$("#"+args[0]).show();	// Show current section
+	//$("#"+args[0]).show();	// Show current section
 	
+	// only if logged in
+	if($("#fb-logout-button").is(":visible")) {
+		$("#"+args[0]).show();	// Show current section 
+	}
+
 	// If there are multiple arguments, handle them accordingly
 	if(args[1]) {		
 		switch(args[0]) {
@@ -131,6 +140,8 @@ function userFacebookLogout() {
 		console.log('we logged out');
 		fb_access_token = '';
 		showLoginButton();
+		$(".section").hide();
+		$("#login-page").show(); // Login info displayed
 	});
 
 }
