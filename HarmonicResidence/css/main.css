@@ -4,8 +4,28 @@ h1 {
 	padding: 20px;
 }
 
-/* Home page // Sign-in Form
+/* Logout
 -------------------------------*/
+#fb-logout-button {
+	margin: 10px;
+	float: right;
+}
+
+/* Home page
+-------------------------------*/
+#login-page {
+	margin: auto;
+	width: 500px;
+}
+
+#login-page p {
+	margin-bottom: 1em;
+}
+
+
+
+/* Home page // Sign-in Form
+-------------------------------
 form {
 	width: 400px;
 	margin: auto;
@@ -23,7 +43,7 @@ dt {
 	float: left;
 	width: 100px;
 	margin-right: 10px;
-}
+}*/
 /*Copied from Soundrop
 button.facebook {
 	position:relative;
