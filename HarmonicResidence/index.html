@@ -12,9 +12,14 @@
 		
 	</head>
 	<body>
+		<div id="header">
+			<img id="logo" src="harmoniius_logo.png" alt="harmonii.us logo" />
+			<button id="fb-logout-button"class="sp-button">Logout</button>
+		</div>
+
+		<!-- Log in page -->
 		<div id="login-page">
 			<h1>Welcome to Harmonic Residence</h1>
-
 			<p id="info">
 				By signing in with Facebook, Harmonic Residence can personalize your listening experience by allowing you to invite friends, add and vote for songs. Harmonic Residence will never post to Facebook without your permission.
 			</p>
@@ -26,46 +31,61 @@
 			<button id="fb-login-button" class="sp-button">Sign In</button>
 		</div>
 
-	<button id="fb-logout-button"class="sp-button">Logout</button>
-
-
 		<!-- Home page -->
 		<div id="home" class="section">
-			<h1>Welcome</h1>
-			<!--
-			<form action="" method="post">
-				<h1>Log in to Harmonic Residence</h1>	
-				<dl>
-					<dt>E-mail Address:</dt> 
-					<dd><input type="email" name="email" size="30" /></dd>
-					
-					<dt>Password:</dt> 
-					<dd><input type="password" name="password" size="30" /></dd>
-				</dl>
-				
-				<p>New to Harmonic Residence? Create an account <a href="">here</a></p>
-				
-				<input type="submit"/>
-			</form>
-			-->
-			
+			<h1>Welcome!</h1>
+
+			<!-- Info (if necessary) -->
+			<div id="session-intro">
+				<button id="create-session" class="sp-button">Create Session</button>
+			</div>
+
+			<!-- Previous session table -->
+			<div id="previousSession">
+				<h2>Previous Sessions</h2>
+			</div>
+
+			<!-- Friend compatibility -->
+			<div id="compatibility">
+				<h2>Friend Compatibility</h2>
+			</div>
 			<!--button id="fb-login-button" class="sp-button">Sign In</button>
 			<button id="fb-logout-button"class="sp-button">Logout</a-->
 		</div>
+		
 		<!-- Session page -->
 		<div id="session" class="section">
-			<h1>Sample session page!</h1>
+			
+			<!-- Session name -->
+			<input type="text" id="session-name" placeholder="Session name" />
+			
+			<!-- Session description -->
+			<textarea id="description" max-length="140" name="session-description"  placeholder="Describe the session in 140 characters or less"></textarea>
+
+			<!-- Now playing section -->
+			<div id="now-playing"></div>
+
+			<!-- Next queue choices -->
+			<div id="voting-choices"></div>
+			
+			<!-- Previous song voting results -->
+			<div id="prev-results"></div>
+
+			<!-- Invite friends/QR code -->
+			<div id="sharing"></div>
+
 		</div>
 
-		<!-- Settings page -->
+		<!-- Hidden for presentation -->
+		<!-- Settings page >
 		<div id="settings" class="section">
 			<h1>Sample settings page!</h1>
 		</div>
 
-		<!-- Help page -->
+		<! Help page >
 		<div id="help" class="section">
 			<h1>Sample help page!</h1>
-		</div>
-
+		</div -->
+	
 	</body>
 </html>

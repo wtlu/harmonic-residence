@@ -4,6 +4,15 @@ h1 {
 	padding: 20px;
 }
 
+/* Header
+-------------------------------*/
+#header {
+	background-color: #A187BE;
+	overflow: hidden;
+	width: 100%;
+}
+
+
 /* Logout
 -------------------------------*/
 #fb-logout-button {
@@ -11,7 +20,7 @@ h1 {
 	float: right;
 }
 
-/* Home page
+/* Login page
 -------------------------------*/
 #login-page {
 	margin: auto;
@@ -22,6 +31,11 @@ h1 {
 	margin-bottom: 1em;
 }
 
+/* Home page
+-------------------------------*/
+#home > h1 {
+	text-align: left;
+}
 
 
 /* Home page // Sign-in Form
