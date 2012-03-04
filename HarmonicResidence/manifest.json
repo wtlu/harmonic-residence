@@ -18,14 +18,15 @@
             "arguments": "session",
             "title": { "en": "Session" }    
         },
-        {
+        // Hidden for presentation
+        /*{
             "arguments": "settings",
             "title": { "en": "Settings" }    
         },
         {
             "arguments": "help",
             "title": { "en": "Help" }    
-        }
+        }*/
     ],
 	"RequiredPermissions": [
 		"http://ws.audioscrobbler.com",
