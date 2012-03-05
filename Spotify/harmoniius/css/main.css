@@ -1,0 +1,111 @@
+h1 {
+	text-align: center;
+	font-size: 24px;
+	padding: 20px;
+}
+
+/* Header
+-------------------------------*/
+#header {
+	background-color: #A187BE;
+	overflow: hidden;
+	width: 100%;
+}
+
+
+/* Logout
+-------------------------------*/
+#fb-logout-button {
+	margin: 10px;
+	float: right;
+}
+
+/* Login page
+-------------------------------*/
+#login-page {
+	margin: auto;
+	width: 500px;
+}
+
+#login-page p {
+	margin-bottom: 1em;
+}
+
+/* Home page
+-------------------------------*/
+#home > h1 {
+	text-align: left;
+}
+
+
+/* Home page // Sign-in Form
+-------------------------------
+form {
+	width: 400px;
+	margin: auto;
+}
+
+legend {
+	margin: 15px 0;
+}
+
+form p, dd, dt {
+	margin: 5px 0;
+}
+
+dt {
+	float: left;
+	width: 100px;
+	margin-right: 10px;
+}*/
+/*Copied from Soundrop
+button.facebook {
+	position:relative;
+	display:inline-block;
+	height:22px;
+	padding:0 1em;
+	border:1px solid #999;
+	border-radius:2px;
+	margin:0;text-align:center;
+	text-decoration:none;
+	font-size:14px;
+	line-height:22px;
+	white-space:nowrap;
+	cursor:pointer;
+	color:#222;
+	background:#fff;
+	-webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+	box-sizing:content-box;
+	-webkit-appearance:none;
+	border-color:#29447e;
+	border-bottom-color:#1a356e;
+	color:#fff;background-color:#5872a7;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#637bad), to(#5872a7));
+	background-image:-webkit-linear-gradient(#637bad, #5872a7);
+	background-image:-moz-linear-gradient(#637bad, #5872a7);
+	background-image:-ms-linear-gradient(#637bad, #5872a7);
+	background-image:-o-linear-gradient(#637bad, #5872a7);
+	background-image:linear-gradient(#637bad, #5872a7);
+	text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow:inset 0 1px 0 #879ac0;
+	box-shadow:inset 0 1px 0 #879ac0;
+	}
+	button.facebook:before{
+		content:"";
+		float:left;
+		width:22px;
+		height:22px;
+		background:url('../img/widgets/button/facebook.png') no-repeat 0 0;
+		border-right:1px solid #465f94;
+		margin:0 1em 0 -1em;
+		}
+button.facebook:hover,button.facebook:focus{
+	background-color:#3b5998;
+}
+button.facebook:active{
+	background:#4f6aa3;
+	-webkit-box-shadow:inset 0 1px 0 #45619d;
+	box-shadow:inset 0 1px 0 #45619d;
+	}
+	*/
