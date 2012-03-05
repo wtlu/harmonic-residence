@@ -21,8 +21,12 @@ h2 {
 	padding:0;
 }
 
+li {
+	list-style: none;
+}
+
 #default {
-	display: none;
+	/*display: none;*/
 }
 
 #container {
@@ -31,10 +35,11 @@ h2 {
 
 #now-playing {
 	overflow: hidden;
+	clear: both;
 }
 
-#now-playing li {
-	list-style: none;
+#now-song, #now-album, #now-artist, #now-time {
+	
 }
 
 #album-art > img {
@@ -43,7 +48,7 @@ h2 {
 	width: 100px;
 }
 
-#now-song, #now-album, #now-artist {
+#now-song, #now-album, #now-artist, #now-time {
 	margin:0.3em;
 	padding:0;
 }
@@ -53,12 +58,16 @@ h2 {
 	font-size: 120%;
 }
 
+#voting-results {
+	clear: both;
+}
+
 #voting-choices {
 	clear: left;
 	margin-top: 1em;
 }
 
-#voting-choices .song-title {
+.song-title {
 	font-weight: bold;
 }
 
