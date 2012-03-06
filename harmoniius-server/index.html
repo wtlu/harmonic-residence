@@ -5,32 +5,45 @@
 		<link rel="stylesheet" href="styles.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 		<script src="harmoniimobile.js" type="text/javascript"></script>
+		<script src="vote.js" type="text/javascript"></script>
 	</head>
 
 	<body>
-		<div id="header">	
-			<h1><img src="harmoniius_logo.png" alt="harmonii.us logo" /></h1>
-		</div>
+		<!-- --><div id="header">	
+			<!--h1--><img src="harmoniius_logo.png" alt="harmonii.us logo" /><!--/h1-->
+		</div><!-- -->
 		
-		<div id="container">
-			<p id="timer">Time left to vote: <span id="time">20</span></p>
+		<div id="session-name">
+			<h2>John's Session</h2>
+			<p id="timer">Time left to vote: <span id="time">10</span></p>
+		</div>
 
+		<div id="container">
 			<!-- Voting choices -->
-			<div id="voting-choices">
-				<h2>Vote for next song</h2>
+			<div id="voting-choices" class="section">
+				<h2>Vote For Next Song</h2>
 				<!-- Song choices for next song goes here -->
 			</div>
 
 			<!-- Now playing -->
-			<div id="now-playing">
-				<h2>Now playing...</h2>
+			<div id="now-playing" class="section">
+				<h2>Now Playing</h2>
 				<div id="album-art"></div>
 				<!-- Information on song playing now goes here -->
 			</div>
 			
-			<div id="voting-results">
-				<h2>Voting Results</h2>
+			<div id="voting-results" class="section">
+				<h2>Results For Previous Round</h2>
 				<!-- Results of voting goes here -->
+				<div id="first" class="subsection">
+					<p class="ranking">1st</p>
+				</div>
+				<div id="second" class="subsection">
+					<p class="ranking">2nd</p>
+				</div>
+				<div id="third" class="subsection">
+					<p class="ranking">3rd</p>
+				</div>
 			</div>
 			
 		</div>
