@@ -1,207 +1,151 @@
-/* Styles for harmonii.us mobile website
-*/
-
-html {
-	margin: 0;
-	padding: 0;
-	-webkit-text-size-adjust: auto;
+html, h1, #header, #voting-choices p {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-	margin: auto;
-	padding: 0;
-	font-family: "Helvetica", "arial", sans-serif;
-	font-size: 16px;
-	width: 980px;
-	background: #ccc;
-	color: #333;
+    color: #333333;
+    font-family: "Helvetica","arial",sans-serif;
+    font-size: 16px;
+    margin: auto;
+    padding: 0;
+    width: 980px;
 }
 
 h1, #header {
-	margin: 0;
-	padding: 0;
-	font-size: 24px;
-	line-height: 0;
+    font-size: 32px;
 }
 
 h2 {
-	margin: 0.3em 0;
-	padding:0;
+    font-size: 28px;
+    margin: 0.3em 0;
+    padding: 0;
 }
 
 li {
-	list-style: none;
+    list-style: none outside none;
 }
 
-#header > img {
-	width: 100%;
+#header {
+    background-color: #A187BE;
+    overflow: hidden;
+}
+
+#header > p {
+    margin: 0;
+    text-align: center;
+}
+
+#logo {
+    width: 85%;
 }
 
 #session-name {
-	/*width: 640px;*/
-	/*top: 0px;
-	z-index: 1; Implement fixed layout later
-	position: fixed;*/
-	overflow: hidden;
-	background-color: #E7F7A9;
-	text-align: center;
+    background-color: #E7F7A9;
+    overflow: hidden;
+    text-align: center;
 }
 
 #session-name > p {
-	margin: 0.5em;
+    font-size: 20px;
+    margin: 0.5em;
 }
 
-#container {
-	margin: 1em;
+#main {
+    margin: 2em;
 }
 
 #now-playing {
-	overflow: hidden;
-	clear: both;
-}
-
-#now-song, #now-album, #now-artist, #now-time {
-	
+    clear: both;
+    overflow: hidden;
 }
 
 #album-art > img {
-	float: left;
-	margin-right: 1em;
-	width: 150px;
-}
-
-#now-song, #now-album, #now-artist, #now-time {
-	margin:0.3em;
-	padding:0;
-}
-
-#now-song {
-	font-weight: bold;
-	font-size: 120%;
-}
-
-#voting-results {
-	clear: both;
-}
-
-
-/* Voting Choices 
-------------------------------------*/
-#voting-choices {
-	clear: left;
-	padding: 1em;
-}
-
-#song-2 {
-	border-top: 0 !important;
-	border-bottom: 0 !important;
+    float: left;
+    margin-right: 1em;
+    width: 150px;
 }
 
 #voting-choices ul {
-	border: solid 1px #7e708f;
-	padding: 1em;
-	/*margin: 0.25em 0;*/
-	background-color: #ccbbdf; /*#C5AEDF; /* #A187BE; */
-	margin: 0;
-	/*overflow: hidden;
-	height: 35px;*/
+    background-color: #FFFFFF;
+    margin: 1em 0;
+    padding: 1em;
 }
 
-#voting-choices ul li {
-
-}
-
-#voting-choices .song-title {
-	
-	/*display: block;
-	padding-right: 0.5em;
-
-	float: left;*/
-	
-}
-.song-title {
-	font-size: 26px;
-}
-
-.artist-name, .album-title {
-	line-height: 1.2em;
-	font-size: 20px;
-}
-
-#voting-choices p {
-	margin: 0;
-	padding: 0;
-}
 
 .voted {
-	background-color: #512C7C !important;
+    background-color: #512C7C !important;
 }
 
-/* Now Playing
-------------------------------------*/
-#now-playing {
+#album-art > img {
+    overflow: hidden;
+    padding: 1em 0;
 }
 
+#song-info {
+    line-height: 1.5em;
+    margin: 2em;
+}
 
-/* Voting Results
-------------------------------------*/
+#song-info > li {
+    line-height: 1.5em;
+}
+
+#voting-results {
+    clear: both;
+}
+
 .subsection {
-	overflow: hidden;
-	margin: 0.25em;
+    background: none repeat scroll 0 0 white;
+    margin: 1em 0;
+    overflow: hidden;
 }
 
 .subsection > p {
-	float: left;
-	font-size: 30px;
-	width: 15%;
-	padding: 1%;
-	text-align: center;
+    float: left;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0.85em 0.3em 0.75em;
+    text-align: center;
+    width: 15%;
 }
 
 #voting-results ul {
-	overflow: hidden;
-	float: left;
-	width: 60%;
-	padding: 1% 3%;
-}
-
-#voting-results ul li {
-
+    float: left;
+    overflow: hidden;
+    padding: 1.5% 1%;
+    width: 60%;
 }
 
 #first > p {
-	color: #FFBB00;
+    color: #FFBB00;
 }
 
 #second > p {
-	color: #666;
+    color: #666666;
 }
 
 #third > p {
-	color: #FF9200;
+    color: #FF9200;
 }
 
-.percent {
-	
-}
-
-
-/* Universal sections
-------------------------------------*/
-.section {	
-	margin: 0.75em 0;
-	padding: 0.75em 1em;
-	/*border: 1px gray solid;*/
-	background-color: #fff; /*#ccc;*/
-	border-radius:25px;
-	-moz-border-radius:25px;
+.section {
+    background: none repeat scroll 0 0 #CCBBDF;
+    border-radius: 25px 25px 25px 25px;
+    margin: 2em 0;
+    padding: 1.5em 2em 2em;
 }
 
 .section > h2 {
-	
-	margin: 0.25em 0;
+    margin: 0.25em 0;
 }
 
 .song-title {
-	font-weight: bold;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.artist-name, .album-title {
+    font-size: 20px;
+    line-height: 1.2em;
 }
