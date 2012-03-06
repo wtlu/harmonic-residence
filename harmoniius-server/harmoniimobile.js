@@ -31,26 +31,20 @@ function countdown() {
 
 // Retrieves "Now Playing" song information and prints to page
 function showNowPlaying() {
-	// Where album cover image should be inserted
-	var img = document.createElement("img");
-	img.src = "albumart.jpg"; // albumart.jpg is placeholder
-	img.alt = "album-art"; // place holder naming
-	$("#album-art").append($(img));
-	
 	// songDetails is a placeholder for retrieving song info from server
-	var songDetails = new Array("Song title", "Artist name", "Album name", "Time left");	
-	
+	var songDetails = new Array("December", "Weezer", "Maladroit", "Time left");	
+
+	getArtist(songDetails);
 	// Adds song details after album art
 	$("#album-art").after(createSongDetails(songDetails, "song-info"));
 }
 
 // Retrieves and prints voting results
 function showVotingResults() {
-
 	// Creates unordered lists for all three songs
 	for (var i = 0; i < 3; i++) {
 		// voteResults is placeholder for retrieved voting results from server
-		var voteResults = new Array(["Song title 1", "Artist name 1", "Album name 1", "Percent 1"], ["Song title2", "Artist name2", "Album name2", "Percent2"], ["Song title3", "Artist name3", "Album name3", "Percent3"]);
+		var voteResults = new Array(["Song title 1", "Artist name 1", "Album name 1", "56%"], ["Song title2", "Artist name2", "Album name2", "38%"], ["Song title3", "Artist name3", "Album name3", "5%"]);
 		var rank;
 		if (i == 0) {
 			rank = "first";
@@ -59,13 +53,13 @@ function showVotingResults() {
 		} else {
 			rank = "third";
 		}
-		$("#voting-results").append(createSongDetails(voteResults[i], rank));
+		$("#" + rank).append(createSongDetails(voteResults[i], "results"));//rank));
 		
 		// Adding percentage to list
-		var li = document.createElement("li");
-		li.innerHTML = voteResults[i][3]; // percent
-		$(li).addClass("percent");
-		$("#" + rank).append($(li));
+		var p = document.createElement("p");
+		p.innerHTML = voteResults[i][3]; // percent
+		$(p).addClass("percent");
+		$("#" + rank).append($(p));
 	}
 }
 
@@ -102,5 +96,75 @@ function createSongDetails(detailArray, idName) {
 	return ul;
 }
 
+
+/// eMusic API ///
+/* --------------------------- */
+
+// Gets artist id from eMusic API
+function getArtist(songDetails) { 
+    // Find artist
+   $.ajax( {
+
+        url: "http://api.emusic.com/artist/search",
+        data: {            
+            format: "JSONP",
+            term: songDetails[1], 
+            exact: "true",
+            apiKey: "b9e2m6p69fnr6ycen25kydv8"
+        },
+        dataType: "jsonp",
+        success: function(data) {
+            var i = 0;
+            var artist = data.artists[i];
+            while (i < data.artists.length) {
+               if (artist.name == songDetails[1]) {
+                 var id = artist.id;
+                 
+                 getAlbum(id, songDetails);
+                }
+                  i++;
+                  artist = data.artists[i];
+            }
+        },
+
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            alert(XMLHttpRequest + ":" + textStatus + ":" + errorThrown);
+        } 
+    });    
+
+}
+
+// Gets album image from eMusic API
+function getAlbum(id, songDetails) {
+	// Find album
+	$.ajax( {
+
+	    url: "http://api.emusic.com/album/search",
+	    data: { 
+	        format: "JSONP",
+	        artistId: id,
+	        imageSize: "small",
+	        apiKey: "b9e2m6p69fnr6ycen25kydv8"
+	    },
+	    dataType: "jsonp",
+	    success: function(data) {
+	        var i = 0;
+	        var album = data.albums[i];
+	        while (i < data.albums.length) {
+	          if (album.name == songDetails[2]) {
+	              var img = document.createElement("img");
+	              $(img).attr("src", album.image);
+	            	$("#album-art").append($(img));
+	          }
+	          i++;
+	          album = data.albums[i];
+	        }                                  
+	    },
+
+	    error: function(XMLHttpRequest, textStatus, errorThrown) {
+	        alert(XMLHttpRequest + ":" + textStatus + ":" + errorThrown);
+	    } 
+	});   
+}
 
 
