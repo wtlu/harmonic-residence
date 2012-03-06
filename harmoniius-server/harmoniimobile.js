@@ -32,7 +32,7 @@ function countdown() {
 // Retrieves "Now Playing" song information and prints to page
 function showNowPlaying() {
 	// songDetails is a placeholder for retrieving song info from server
-	var songDetails = new Array("December", "Weezer", "Maladroit", "Time left");	
+	var songDetails = new Array("December", "Weezer", "Maladroit", "20");	
 
 	getArtist(songDetails);
 	// Adds song details after album art
@@ -44,7 +44,7 @@ function showVotingResults() {
 	// Creates unordered lists for all three songs
 	for (var i = 0; i < 3; i++) {
 		// voteResults is placeholder for retrieved voting results from server
-		var voteResults = new Array(["Song title 1", "Artist name 1", "Album name 1", "56%"], ["Song title2", "Artist name2", "Album name2", "38%"], ["Song title3", "Artist name3", "Album name3", "5%"]);
+		var voteResults = new Array(["Map of The Problematique", "MUSE", "Black Holes & Revelations", "56%"], ["Black Hole Sun", "Soundgarden", "Superunknown", "38%"], ["Butterfly", "Weezer", "Pinkerton", "6%"]);
 		var rank;
 		if (i == 0) {
 			rank = "first";
@@ -66,7 +66,7 @@ function showVotingResults() {
 // Retrieves and prints song choices to vote for
 function showChoices() {
 	// songChoices is placeholder for retrieved triplet of song choices
-	var songChoices = new Array(["Song title1", "Artist name1", "Album name1"], ["Song title2", "Artist name2", "Album name2"], ["Song title3", "Artist name3", "Album name3"]);
+	var songChoices = new Array(["You'll Never Walk Alone", "TOKYO SKA PARADISE ORCHESTRA", "PARADISE BLUE"], ["Boring Machines Disturbs Sleep", "Mogwai", "Happy Songs for Happy People"], ["Californication", "Red Hot Chili Peppers", "Californication"]);
 	
 	// Creates ul for 3 song choices
 	for (var i = 0; i < 3; i++) {
