@@ -41,10 +41,12 @@ function showNowPlaying() {
 
 // Retrieves and prints voting results
 function showVotingResults() {
+		// voteResults is placeholder for retrieved voting results from server
+		var voteResults = new Array(["December", "Weezer", "Maladroit", "56%"], ["Black Hole Sun", "Soundgarden", "Superunknown", "38%"], ["Butterfly", "Weezer", "Pinkerton", "6%"]);
+
+
 	// Creates unordered lists for all three songs
 	for (var i = 0; i < 3; i++) {
-		// voteResults is placeholder for retrieved voting results from server
-		var voteResults = new Array(["Map of The Problematique", "MUSE", "Black Holes & Revelations", "56%"], ["Black Hole Sun", "Soundgarden", "Superunknown", "38%"], ["Butterfly", "Weezer", "Pinkerton", "6%"]);
 		var rank;
 		if (i == 0) {
 			rank = "first";
@@ -79,7 +81,7 @@ function showChoices() {
 function createSongDetails(detailArray, idName) {
 	var ul = document.createElement("ul");
 	ul.id = idName;
-	for (var i = 0; i < 3; i++){
+	for (var i = 0; i < 2; i++){
 		var li = document.createElement("li");
 		li.innerHTML = detailArray[i];
 		var name;

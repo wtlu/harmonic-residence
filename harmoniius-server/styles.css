@@ -1,4 +1,4 @@
-html, h1, #header, #voting-choices p {
+html, #header, #voting-choices p {
     margin: 0;
     padding: 0;
 }
@@ -6,19 +6,14 @@ html, h1, #header, #voting-choices p {
 body {
     color: #333333;
     font-family: "Helvetica","arial",sans-serif;
-    font-size: 16px;
     margin: auto;
     padding: 0;
     width: 980px;
 }
 
-h1, #header {
-    font-size: 32px;
-}
-
-h2 {
-    font-size: 28px;
-    margin: 0.3em 0;
+h1 {
+    font-size: 3.25em;/*48px;*/
+    margin: 0.2em 0;
     padding: 0;
 }
 
@@ -37,22 +32,31 @@ li {
 }
 
 #logo {
-    width: 85%;
+    width: 75%;
+   /* height: 40%;*/
 }
 
 #session-name {
     background-color: #E7F7A9;
     overflow: hidden;
     text-align: center;
+    padding: 0.6em 0 0.4em;
 }
 
-#session-name > p {
-    font-size: 20px;
-    margin: 0.5em;
+#session-name > h1 {
+    font-size: 3em;
+    display: inline;
+}
+
+#timer {
+    font-size: 3em;
+    margin: 0.4em 0 !important;
+    display: inline;
+    float: right;
 }
 
 #main {
-    margin: 2em;
+    margin: 1em;
 }
 
 #now-playing {
@@ -60,21 +64,30 @@ li {
     overflow: hidden;
 }
 
-#album-art > img {
+#voting-choices {
+    overflow: hidden;
+}
+
+#voting-choices > h1 {
     float: left;
-    margin-right: 1em;
-    width: 150px;
 }
 
 #voting-choices ul {
     background-color: #FFFFFF;
     margin: 1em 0;
     padding: 1em;
+    clear: left;
 }
 
 
 .voted {
     background-color: #512C7C !important;
+}
+
+#album-art > img {
+    float: left;
+    margin-right: 1em;
+    width: 150px;
 }
 
 #album-art > img {
@@ -84,7 +97,7 @@ li {
 
 #song-info {
     line-height: 1.5em;
-    margin: 2em;
+    margin: 1em 2em;
 }
 
 #song-info > li {
@@ -133,7 +146,7 @@ li {
     background: none repeat scroll 0 0 #CCBBDF;
     border-radius: 25px 25px 25px 25px;
     margin: 2em 0;
-    padding: 1.5em 2em 2em;
+    padding: 1em 2em 1em;
 }
 
 .section > h2 {
@@ -141,11 +154,15 @@ li {
 }
 
 .song-title {
-    font-size: 24px;
+    font-size: 2em;
     font-weight: bold;
 }
 
 .artist-name, .album-title {
-    font-size: 20px;
+    font-size: 2em;
     line-height: 1.2em;
+}
+
+#footer  {
+    text-align: center;
 }
