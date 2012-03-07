@@ -3,6 +3,12 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Harmonic Residence</title>
+		
+		<!-- DELETE LATER -->
+		<link rel="stylesheet" href="css/adam.css">
+		<link rel="stylesheet" href="css/api.css">		
+		<!-- /DELETE LATER -->
+		
 		<link rel="stylesheet" href="sp://import/css/adam.css">
 		<link rel="stylesheet" href="sp://import/css/api.css">
 		<link rel="stylesheet" href="css/main.css">
@@ -14,9 +20,10 @@
 	<body>
 		<div id="header">
 			<img id="logo" src="harmoniius_logo.png" alt="harmonii.us logo" />
-			<button id="fb-logout-button"class="sp-button">Logout</button>
 		</div>
 
+		<button id="fb-logout-button"class="sp-button">Logout</button>
+		
 		<!-- Log in page -->
 		<div id="login-page">
 			<h1>Welcome to Harmonic Residence</h1>
@@ -33,7 +40,7 @@
 
 		<!-- Home page -->
 		<div id="home" class="section">
-			<h1>Welcome!</h1>
+			<h1>Welcome, Shiho!</h1>
 
 			<!-- Info (if necessary) -->
 			<div id="session-intro">
@@ -56,25 +63,87 @@
 		<!-- Session page -->
 		<div id="session" class="section">
 			
-			<!-- Session name -->
-			<input type="text" id="session-name" placeholder="Session name" />
-			
-			<!-- Session description -->
-			<textarea id="description" max-length="140" name="session-description"  placeholder="Describe the session in 140 characters or less"></textarea>
+			<div id="session-details">
+				<!-- Session name -->
+				<!--input type="text" id="session-name" placeholder="Session name" /-->
+				<h1>Shiho's Session</h1>
+				
+				<!-- Session description -->
+				<!--textarea id="description" max-length="140" name="session-description"  placeholder="Describe the session in 140 characters or less"></textarea-->
+				<p>"Yay! HCDE 411!"</p>
+			</div>
+
+			<!--p id="listeners">25 listeners</p-->
 
 			<!-- Now playing section -->
-			<div id="now-playing"></div>
+			<div id="now-playing">
+				<h2>Now Playing</h2>
+				<div class="album-art">
+					<img id="now-art" src="" />
+				</div>
+				<div class="song-info">
+					<h3 class="song-title first"><!--Now playing song goes here-->Split Emotions</h3>
+					<p class="artist-name first">the pillows<!-- Now playing artist goes here --></p>
+					<p class="percent first"><!-- First place percent -->75% </span id="of-votes">of votes</span></p>
+				</div>	
+			</div>
+
+			<!-- Previous song voting results -->
+			<div id="prev-results">
+				<div id="second" class="lost">
+					<h3 class="song-title"><!-- song goes here-->DIFFERENT SENSE</h3>
+					<p class="artist-name">DIR EN GREY<!-- artist goes here --></p>
+					<p class="percent"><!--  percent -->20%</p>
+				</div>
+				<div id="third" class="lost">
+					<h3 class="song-title"><!--song goes here-->STRONG</h3>
+					<p class="artist-name">MIYAVI vs KREVA<!-- artist goes here --></p>
+					<p class="percent"><!-- place percent -->5%</p>
+				</div>
+			</div>
 
 			<!-- Next queue choices -->
-			<div id="voting-choices"></div>
+			<div id="voting-choices">
+				<h2>Vote For Next Song</h2>
+				
+				<!-- Song choice 1 -->
+				<div id="song1" class="choice">	
+					<h3 class="song-title"><!-- song -->December</h3>
+					<p class="artist-name"><!-- artist-->Weezer</p>
+					<div class="album-art">
+							<img src="" />
+					</div>
+				</div>
+				
+				<!-- Song choice 2-->
+				<div id="song2" class="choice">
+					<h3 class="song-title"><!-- song -->Like a Stone</h3>
+					<p class="artist-name"><!-- artist-->Audioslave</p>
+					<div class="album-art">
+							<img src="" />
+					</div>
+				</div>
+				
+				<!-- Song choice 3 -->
+				<div id="song3" class="choice">
+					<h3 class="song-title"><!-- song -->Get By</h3>
+					<p class="artist-name"><!-- artist-->Talib Kweli</p>
+					<div class="album-art">
+							<img src="" />
+					</div>
+				</div>
+			</div>
 			
-			<!-- Previous song voting results -->
-			<div id="prev-results"></div>
-
 			<!-- Invite friends/QR code -->
-			<div id="sharing"></div>
+			<div id="invite">
+				<h2>Invite Friends</h2>
+				<p>Scan QR code:</p>
+				<a href="">http://harmonii.us/sumx</a>
+			</div>
 
 		</div>
+
+
 
 		<!-- Hidden for presentation -->
 		<!-- Settings page >
