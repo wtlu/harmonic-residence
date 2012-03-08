@@ -17,6 +17,7 @@ var sp = getSpotifyApi(1),
 var permissions = ['user_about_me', 'user_actions.music'];
 var app_id = '174774552634402';
 var fb_access_token = '';
+var tempPlaylist = new models.Playlist();
 
 //Post: Allows for authentication with Facebook
 //Note that if user is already logged in, then app will not ask user to sign in again
@@ -63,6 +64,15 @@ function handleArgs() {
 	// only if logged in
 	if($("#fb-logout-button").is(":visible")) {
 		$("#"+args[0]).show();	// Show current section 
+		switch(args[0]) {
+			case "session":
+				startFakeSession();
+				break;
+			case "settings":
+				break;
+			case "help":
+				break;
+		}
 	}
 
 	// If there are multiple arguments, handle them accordingly
@@ -70,6 +80,7 @@ function handleArgs() {
 		switch(args[0]) {
 			case "session":
 				//sessionInput(args);
+				startFakeSession();
 				break;
 			case "settings":
 				//settingsInput(args[1]);
@@ -155,4 +166,13 @@ $(function(){
 	handleArgs();
 	handleLinks();
 	
+	// Listen for track changes and update the page
+	player.observe(models.EVENT.CHANGE, function (event) {
+		if (event.data.curtrack == true) {
+			var track = player.track;
+			$("#play-history").append('<div>Track changed to: '+track.name+' by '+track.album.artist.name+'</div>');
+		}
+		nowPlaying();
+		
+	}); 
 });
