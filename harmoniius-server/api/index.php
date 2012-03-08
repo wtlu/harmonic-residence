@@ -69,7 +69,7 @@ class HarmoniiAPI {
 
     // Constructor - open DB connection
     function __construct() {
-        $this->db = new mysqli('localhost', 'username', 'password', 'promos');
+        $this->db = new mysqli('localhost', 'harmonicresidence', 'SkJuqKQY4alu', 'media_db');
         $this->db->autocommit(FALSE);
     }
 
@@ -82,6 +82,13 @@ class HarmoniiAPI {
     function getSessionInfo() {
     
 		echo "Hello, PHP!";
+		$stmt = $this->db->prepare('SELECT id, name, history_id FROM sessions');
+		$stmt->execute();
+		$stmt->bind_result($id, $name, $history_id);
+		while (stmt->fetch()) {
+			echo "$id with name $name and history $history_id";
+		}
+		stmt->close();
     
     }
 
@@ -91,5 +98,6 @@ class HarmoniiAPI {
 // Creates a new instance of the RedeemAPI class and calls the redeem method
 $api = new HarmoniiAPI;
 $api->getSessionInfo();
+phpinfo();
 
 ?>
