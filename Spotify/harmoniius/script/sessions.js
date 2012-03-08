@@ -19,13 +19,24 @@ function endSession(session_id) {
 //Post: Starts a fake session
 function startFakeSession() {
 	console.log('Now in fake session!');
-	var tracks = library.tracks;
-	var track = tracks[Math.floor(Math.random()*tracks.length)];
 	clearPlaylist(tempPlaylist);
-	tempPlaylist.add(track.data.uri);
+	makeFakePlaylist(tempPlaylist);
+	//var tracks = library.tracks;
+	//var track = tracks[Math.floor(Math.random()*tracks.length)];
+	//tempPlaylist.add(track.data.uri);
 	console.log(tempPlaylist);
-	player.play(track.data.uri, tempPlaylist.data.uri, 0);
+	player.play(tempPlaylist.tracks[0], tempPlaylist.data.uri, 0);
 	e.preventDefault();
+}
+
+//Post: Add a fake playlist of songs to the given playlist
+function makeFakePlaylist(playlist) {
+	console.log('Now creating Fake Playlist');
+	playlist.add('spotify:track:0iQHjEwLtwyGA9kL1H6SeN');
+	playlist.add('spotify:track:77NNZQSqzLNqh2A9JhLRkg');
+	playlist.add('spotify:track:5Q0Nhxo0l2bP3pNjpGJwV1');
+	playlist.add('spotify:track:0Jc8qF1mUPo1A96HE9QxZz');
+	playlist.add('spotify:track:0iYebKFUSfF72fUu2OW6ZT');
 }
 
 //Post: Clear the given playlist
