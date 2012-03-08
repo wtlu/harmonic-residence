@@ -82,11 +82,11 @@ class HarmoniiAPI {
     function getSessionInfo() {
     
 		echo "Hello, PHP!";
-		$stmt = $this->db->prepare('SELECT id, name, history_id FROM sessions');
+		$stmt = $this->db->prepare('SELECT id, name, facebook_id FROM sessions');
 		$stmt->execute();
-		$stmt->bind_result($id, $name, $history_id);
+		$stmt->bind_result($id, $name, $facebook_id);
 		while (stmt->fetch()) {
-			echo "$id with name $name and history $history_id";
+			echo "$id with name $name and history $facebook_id";
 		}
 		stmt->close();
     
