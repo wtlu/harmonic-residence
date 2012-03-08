@@ -69,8 +69,14 @@ class HarmoniiAPI {
 
     // Constructor - open DB connection
     function __construct() {
-        $this->db = new mysqli('localhost', 'harmonicresidence', 'SkJuqKQY4alu', 'media_db');
+        $this->db = new mysqli('localhost', 'root', 'root', 'media_db');
+        if (!($this->db)) {
+  			echo( "<P>Unable to connect to the " .
+        	"database server at this time.</P>" );
+  			exit();
+		}
         $this->db->autocommit(FALSE);
+        echo "connected!";
     }
 
     // Destructor - close DB connection
@@ -84,11 +90,12 @@ class HarmoniiAPI {
 		echo "Hello, PHP!";
 		$stmt = $this->db->prepare('SELECT id, name, facebook_id FROM sessions');
 		$stmt->execute();
+		/*
 		$stmt->bind_result($id, $name, $facebook_id);
 		while (stmt->fetch()) {
 			echo "$id with name $name and history $facebook_id";
 		}
-		stmt->close();
+		stmt->close();*/
     
     }
 
